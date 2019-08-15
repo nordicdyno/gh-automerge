@@ -20,13 +20,13 @@ var (
 	githubProj     = flag.String("p", "", "Github project/repository owner name")
 	githubRepo     = flag.String("r", "", "Github repository name")
 	pullRequestNum = flag.Int("pr", 0, "Github pull request number")
-	attemptTimeout = flag.Int("t", 60, "attempts timeout in seconds")
+	attemptTimeout = flag.Int("t", 60, "attempt timeout in seconds")
 )
 
 func main() {
 	flag.Parse()
 	token := mustStringFromEnvIfNotSet("token", "GITHUB_AUTH_TOKEN", *githubToken)
-	proj := mustStringFromEnvIfNotSet("project", "GITHUB_PROJECT", *githubProj)
+	proj := mustStringFromEnvIfNotSet("p", "GITHUB_PROJECT", *githubProj)
 	repo := mustStringFromEnvIfNotSet("r", "GITHUB_REPO", *githubRepo)
 	timeout := time.Duration(int64(*attemptTimeout) * int64(time.Second.Nanoseconds()))
 
