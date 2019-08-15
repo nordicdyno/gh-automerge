@@ -47,12 +47,15 @@ func main() {
 			pr.GetMergeable(),
 			i,
 		)
+
 		if pr.GetMerged() {
 			finishWithMessage("\nAlready merged, nothing to do.")
 		}
-		if !pr.GetMergeable() {
+
+		if !pr.GetMergeable() && ms != "unknown" {
 			failedWithMessage("\nNot in mergable state.")
 		}
+
 		if ms == "blocked" || ms == "unknown" {
 			time.Sleep(timeout)
 			continue

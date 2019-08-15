@@ -4,7 +4,7 @@ Github PRs auto merger tool.
 
 ## How to install
 
-    go get github.com/nordicdyno/gh-automerge
+    go get -u github.com/nordicdyno/gh-automerge
 
 ## How to setup
 
