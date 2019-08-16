@@ -27,3 +27,7 @@ or pass token via `-token`, `-p` and `-r` flags to gh-automerge command.
 with properly defined environment variables, just pass pull request number:
 
     gh-automerge -pr=<PR-NUMBER>
+
+## More powerful alternatives
+
+* https://github.com/palantir/bulldozer

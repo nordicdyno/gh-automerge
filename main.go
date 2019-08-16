@@ -63,7 +63,8 @@ func main() {
 
 		prMerged, _, err := client.PullRequests.Merge(ctx, proj, repo, *pullRequestNum, "automerge", nil)
 		failedOnErr(err)
-		log.Printf("PR merged: %#v.", prMerged)
+
+		log.Printf("PR merged: %v.", prMerged.GetMessage())
 		break
 	}
 }
